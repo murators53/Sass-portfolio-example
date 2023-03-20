@@ -1,0 +1,48 @@
+@import 'variables';
+
+body {
+  background-color: $bg-color;
+  font-family: $main-font;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  padding: 20px 40px;
+  nav {
+    a{
+        text-decoration: none;
+        white-space: nowrap;
+        color: $text-color;
+        cursor: pointer;
+        &:hover{
+            color: crimson;
+            transition: all .5s;
+        }
+    }
+  }
+  #nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    a{
+        padding: 0 20px;
+        border-right: 1px solid;
+    }
+    img {
+      width: 80px;
+    }
+  }
+  #nav-right {
+    display: flex;
+    gap: 20px;
+  }
+}
