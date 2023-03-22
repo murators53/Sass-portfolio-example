@@ -1,8 +1,21 @@
-@import 'variables';
+@import "variables";
+@import "modules";
+
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: 801px) and (max-width: 1400px) {
+    @content;
+  }
+}
 
 body {
   background-color: $bg-color;
   font-family: $main-font;
+  overflow-x: visible;
 }
 
 * {
@@ -17,32 +30,154 @@ header {
   background-color: white;
   align-items: center;
   padding: 20px 40px;
+  @include mobile{
+    font-size: 14px;
+    padding: 10px 20px;
+  }
   nav {
-    a{
-        text-decoration: none;
-        white-space: nowrap;
-        color: $text-color;
-        cursor: pointer;
-        &:hover{
-            color: crimson;
-            transition: all .5s;
-        }
+    a {
+      text-decoration: none;
+      white-space: nowrap;
+      color: $text-color;
+      cursor: pointer;
+      &:hover {
+        color: crimson;
+        transition: all 0.5s;
+      }
     }
   }
   #nav-left {
     display: flex;
     align-items: center;
-    gap: 30px;
-    a{
-        padding: 0 20px;
-        border-right: 1px solid;
+    gap: 5px;
+    a {
+      padding: 0 10px;
+      border-right: 1px solid;
+      @include mobile{
+        width: auto;
+        border: none;
+        padding: 0 5px;
+        color: crimson;
+      }
     }
     img {
       width: 80px;
+      @include mobile{
+        width: 60px;
+      }
     }
   }
   #nav-right {
     display: flex;
     gap: 20px;
+    @include mobile{
+      gap: 10px;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  background: linear-gradient(rgb(215, 215, 215) 33%, $bg-color 40%);
+  justify-content: space-between;
+  padding: 50px;
+  @include mobile {
+    flex-direction: column;
+  }
+  @include laptop {
+    flex-direction: column;
+  }
+}
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  h1 {
+    @extend %heading;
+  }
+  p {
+    font-size: 19px;
+    max-width: 500px;
+    text-align: center;
+  }
+  img {
+    max-width: 600px;
+    mix-blend-mode: darken;
+    @include mobile {
+      width: 200px;
+    }
+  }
+  h2 {
+    @extend %heading;
+  }
+  button {
+    @extend %button;
+    background-color: crimson;
+  }
+}
+/* Hero right side */
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  &-main {
+    max-width: 900px;
+    @include mobile {
+      width: 500px;
+    }
+  }
+  &-second {
+    max-width: 400px;
+    mix-blend-mode: darken;
+  }
+  p {
+    max-width: 500px;
+    text-align: center;
+  }
+}
+
+// INTREOR
+#interior {
+  @extend %design;
+  gap: 30px;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.4), black),
+    url(/images/interior.jpg);
+}
+#exterior {
+  @extend %design;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.5) 90%, black),
+    url(/images/exterior-4.jpg);
+}
+
+#cars-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+  button {
+    @extend %button;
+    background-color: aqua;
+    margin-top: 50px;
+  }
+  .cars {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      width: 300px;
+      mix-blend-mode: darken;
+    }
+    .car {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
   }
 }
