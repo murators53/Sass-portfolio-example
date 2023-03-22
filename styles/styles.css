@@ -82,7 +82,7 @@ header {
   align-items: center;
   padding: 20px 40px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   header {
     font-size: 14px;
     padding: 10px 20px;
@@ -107,7 +107,7 @@ header #nav-left a {
   padding: 0 10px;
   border-right: 1px solid;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   header #nav-left a {
     width: auto;
     border: none;
@@ -118,7 +118,7 @@ header #nav-left a {
 header #nav-left img {
   width: 80px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   header #nav-left img {
     width: 60px;
   }
@@ -127,31 +127,24 @@ header #nav-right {
   display: flex;
   gap: 20px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   header #nav-right {
     gap: 10px;
-  }
-}
-@media (max-width: 1001px) and (max-width: 1400px) {
-  header #nav-right {
-    display: none;
   }
 }
 
 .hero {
   display: flex;
-  position: relative;
-  gap: 160px;
   background: linear-gradient(rgb(215, 215, 215) 33%, #eaeaea 40%);
   justify-content: space-between;
-  padding: 10px;
+  padding: 50px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .hero {
     flex-direction: column;
   }
 }
-@media (max-width: 1001px) and (max-width: 1400px) {
+@media (max-width: 801px) and (max-width: 1400px) {
   .hero {
     flex-direction: column;
   }
@@ -162,7 +155,6 @@ header #nav-right {
   flex-direction: column;
   align-items: center;
   gap: 50px;
-  min-width: 400px;
 }
 .slogan p {
   font-size: 19px;
@@ -170,10 +162,10 @@ header #nav-right {
   text-align: center;
 }
 .slogan img {
-  max-width: 200px;
+  max-width: 600px;
   mix-blend-mode: darken;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .slogan img {
     width: 200px;
   }
@@ -185,16 +177,14 @@ header #nav-right {
 /* Hero right side */
 .images {
   display: flex;
-  overflow-x: hidden;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 }
 .images-main {
-  padding: 0 50px;
-  max-width: 1000px;
+  max-width: 900px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .images-main {
     width: 500px;
   }
@@ -232,7 +222,7 @@ header #nav-right {
   justify-content: space-between;
   gap: 30px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   #cars-sec .cars {
     flex-direction: column;
     align-items: center;
