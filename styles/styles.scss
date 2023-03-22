@@ -2,20 +2,22 @@
 @import "modules";
 
 @mixin mobile {
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     @content;
   }
 }
 @mixin laptop {
-  @media (max-width: 801px) and (max-width: 1400px) {
+  @media (max-width: 1001px) and (max-width: 1400px) {
     @content;
   }
+}
+*{
+  overflow-x: hidden;
 }
 
 body {
   background-color: $bg-color;
   font-family: $main-font;
-  overflow-x: visible;
 }
 
 * {
@@ -73,14 +75,19 @@ header {
     @include mobile{
       gap: 10px;
     }
+    @include laptop {
+      display: none;
+    }
   }
 }
 
 .hero {
   display: flex;
+  position: relative;
+  gap: 160px;
   background: linear-gradient(rgb(215, 215, 215) 33%, $bg-color 40%);
   justify-content: space-between;
-  padding: 50px;
+  padding: 10px;
   @include mobile {
     flex-direction: column;
   }
@@ -93,6 +100,7 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  min-width: 400px;
   h1 {
     @extend %heading;
   }
@@ -102,7 +110,7 @@ header {
     text-align: center;
   }
   img {
-    max-width: 600px;
+    max-width: 200px;
     mix-blend-mode: darken;
     @include mobile {
       width: 200px;
@@ -119,11 +127,14 @@ header {
 /* Hero right side */
 .images {
   display: flex;
+  overflow-x: hidden;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  
   &-main {
-    max-width: 900px;
+    padding: 0 50px;
+    max-width: 1000px;
     @include mobile {
       width: 500px;
     }
